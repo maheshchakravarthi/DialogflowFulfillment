@@ -1,0 +1,14 @@
+---
+applications:
+- name: dialogflow-fulfillment
+  memory: 768M
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  random-route: true
+  path: ./build/libs/DialogflowFulfillment-0.0.1-SNAPSHOT.jar
+  endpoints.sensitive: false
+  management.security.enabled: false
+  lcp: cloud
+
+services:
+ - myredis-forpoc
