@@ -20,7 +20,7 @@ import redis.clients.jedis.JedisPoolConfig;
 import java.util.List;
 
 @Configuration
-@ComponentScan("com.homedepot.dialogflowfulfillment.config")
+@ComponentScan("com.dialogflowfulfillment.config")
 public class RedisConfig {
 
     @Autowired
