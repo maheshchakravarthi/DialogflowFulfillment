@@ -15,9 +15,9 @@ public class Utils {
         Gson gson = new Gson();
         try {
             Object o = gson.fromJson(json, Object.class);
-            System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(o));
+            logger.info(new GsonBuilder().setPrettyPrinting().create().toJson(o));
         } catch (Exception e) {
-            logger.info("invalid json format");
+            logger.error("Invalid json format passed - "+json);
             return false;
         }
         return true;

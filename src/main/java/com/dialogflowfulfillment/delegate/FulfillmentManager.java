@@ -32,58 +32,10 @@ public class FulfillmentManager {
 
     public String getResponseFromRedis(Object requestDTO) throws Exception{
 
-
-//        String responseJson = fetchData.fetchResponseFromFile(Constants.responseJson);
-
-        long start = System.currentTimeMillis();
-
-
-        //redisConfig.getRedisServiceConfig();
+//        long start = System.currentTimeMillis();
 
         return buildResponseFromRequest(requestDTO);
     }
-
-    /*public String parseJsonResponse(Object requestDTO, String responseJson) throws Exception{
-
-        String request = new Gson().toJson(requestDTO);
-
-        UUID uuid = UUID.randomUUID();
-        String guid = uuid.toString();
-
-        *//*Request object parsing*//*
-        JsonParser parser = new JsonParser();
-        JsonElement jsonRequestElement = parser.parse(request);
-
-        JsonObject requestObj = jsonRequestElement.getAsJsonObject();
-        *//*String id = requestObj.get("id").getAsString();*//*
-        String sessionId = requestObj.get("sessionId").getAsString();
-
-        JsonObject resultObj = requestObj.getAsJsonObject("result");
-        JsonObject metadataObj = resultObj.getAsJsonObject("metadata");
-        String intentId = metadataObj.get("intentId").getAsString();
-
-        JsonObject parametersObj = resultObj.getAsJsonObject("parameters");
-        String inputExperience = parametersObj.get("Experience").getAsString();
-
-        responseJson = responseJson.replace("sample_id", guid);
-        responseJson = responseJson.replace("sample_sessionId", sessionId);
-        responseJson = responseJson.replace("sample_intentId", intentId);
-        responseJson = responseJson.replace("sample_timestamp", getCurrentTimeStamp());
-
-        *//*response parsing*//*
-        JsonElement jsonResponseElement = parser.parse(responseJson);
-        JsonObject responseObj = jsonResponseElement.getAsJsonObject();
-        String speech = responseObj.get("speech").getAsString();
-        String displayText = responseObj.get("displayText").getAsString();
-
-        String speechResponse = getSpeechResponse(inputExperience);
-
-        responseJson = responseJson.replace(speech, speechResponse);
-        responseJson = responseJson.replace(displayText, speechResponse);
-
-
-        return responseJson;
-    }*/
 
     public String buildResponseFromRequest(Object requestDTO) throws Exception{
         String request = new Gson().toJson(requestDTO);

@@ -2,6 +2,8 @@ package com.dialogflowfulfillment.dao;
 
 import com.dialogflowfulfillment.model.Experience;
 import com.dialogflowfulfillment.model.ExpRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.redis.core.RedisTemplate;
@@ -19,20 +21,15 @@ public class RedisConnect {
     @Autowired
     ExpRepository expRepository;
 
+    Logger logger = LoggerFactory.getLogger(RedisConnect.class);
+
     public void saveExpStatusIntoRedis(List<Experience> expStatusList){
 
         expStatusList.forEach(experience -> {
             expRepository.saveExperience(experience);
         });
 
-        /*Experience exp = new Experience("COM_Platform", "GREEN");*/
-
-        /*ExpRepository expRepository = new ExpRepositoryImpl(redisTemplate);*/
-
-        /*expRepository.saveExperience(exp);
-
-        System.out.println("successfully inserted");*/
-
+        logger.debug("successfully inserted");
     }
 
     public Map<Object, Object> getStatusForAllExperiences(){

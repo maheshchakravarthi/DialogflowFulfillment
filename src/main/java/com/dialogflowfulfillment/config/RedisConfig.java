@@ -82,7 +82,7 @@ public class RedisConfig {
         Config service = null;
 
         for (Config candidate : services) {
-            System.out.println("service - "+candidate.getString("name"));
+            logger.info("service - "+candidate.getString("name"));
             if (candidate.getString("name").equals(serviceName)) {
                 service = candidate;
                 break;

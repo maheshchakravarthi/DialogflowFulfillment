@@ -1,7 +1,6 @@
 package com.dialogflowfulfillment.util;
 
 public class Constants {
-    public static final String sampleConstant = "sampleConstant";
 
     public static final String localRedisHostName = "localhost";
     public static final int redisPort = 6379;
