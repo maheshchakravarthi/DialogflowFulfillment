@@ -4,7 +4,7 @@ import com.dialogflowfulfillment.util.Constants;
 import com.dialogflowfulfillment.model.Experience;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
